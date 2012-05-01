@@ -6,9 +6,8 @@ BUILD_DIR=$1
 cat <<EOF
 ---
 config_vars:
-  PATH: .jdk7/bin:.play:.tools:/usr/local/bin:/usr/bin:/bin
+  PATH: .jdk7/bin:.vertx/bin:.tools:/usr/local/bin:/usr/bin:/bin
   JAVA_OPTS: -Xmx384m
-  PLAY_OPTS: --%prod -Dprecompiled=true
 addons:
   shared-database:5mb
 EOF
@@ -16,6 +15,6 @@ EOF
 if [ ! -f $BUILD_DIR/Procfile ]; then
 cat <<EOF
 default_process_types:
-  web:    play run --http.port=\$PORT \$PLAY_OPTS
+  web: vertx run server.js
 EOF
 fi
