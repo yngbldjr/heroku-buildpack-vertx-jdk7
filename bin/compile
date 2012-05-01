@@ -58,5 +58,5 @@ cp -r .vertx $CACHE_DIR/.vertx
 # Warn if no Procfile is present
 if [ ! -f Procfile ]; then
   echo "-----> No Procfile found. Will use the following default process: "
-  echo "       vertx run server.js"
+  echo "       vertx run server.groovy"
 fi
