@@ -40,8 +40,8 @@ VERTX_URL="https://github.com/downloads/purplefox/vert.x/vert.x-1.0.beta10.tar.g
 
 if [ ! -d "$BUILD_DIR/.vertx" ]; then
   echo -n "-----> Installing Vert.x build (to .vertx)....."
-  curl --silent --max-time 320 --location $VERTX_URL | tar xz
-  mv vertx* .vertx
+  curl --max-time 320 --location $VERTX_URL | tar xz
+  mv vert* .vertx
   chmod -x .vertx/bin/vertx
   echo " done"
 fi
