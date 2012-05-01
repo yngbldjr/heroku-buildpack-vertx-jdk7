@@ -17,7 +17,7 @@ Example usage:
 
     -----> Heroku receiving push
     -----> Fetching custom build pack... done
-    -----> Play! app detected
-    -----> Installing Play!..... done
+    -----> Vert.x app detected
+    -----> Installing Vert.x..... done
 
-The buildpack will detect your app as a vert.x project if it has a file called server.js. If you don't provide a Procfile, the build pack will default to launching your app with `vertx run server.js`
+The buildpack will detect your app as a Vert.x project if it has a file called server.js. If you don't provide a Procfile, the build pack will default to launching your app with `vertx run server.js`
