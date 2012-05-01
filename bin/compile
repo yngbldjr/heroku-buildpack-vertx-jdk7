@@ -45,7 +45,6 @@ if [ ! -d "$BUILD_DIR/.vertx" ]; then
   curl --silent --max-time 320 --location $VERTX_URL -o 'vertx.tar.gz'
   tar xzf 'vertx.tar.gz'
   rm 'vertx.tar.gz'
-  chmod +x bin/vertx
   echo " done"
 fi
 
