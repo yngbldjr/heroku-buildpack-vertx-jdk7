@@ -29,10 +29,6 @@ if [ ! -d "$BUILD_DIR/.jdk7" ]; then
   echo " done"
 fi
 
-export JAVA_HOME="$BUILD_DIR/.jdk7"
-
-cp -r .jdk7 $CACHE_DIR/.jdk7
-
 cd $BUILD_DIR
 if [ -d "$CACHE_DIR/.vertx" ]; then
   echo -n "copying vertx to app"
@@ -51,11 +47,12 @@ if [ ! -d "$BUILD_DIR/.vertx" ]; then
   echo " done"
 fi
 
+cd $BUILD_DIR
+
 export JAVA_HOME="$BUILD_DIR/.jdk7"
 
 cp -r .jdk7 $CACHE_DIR/.jdk7
 cp -r .vertx $CACHE_DIR/.vertx
-
 
 # Warn if no Procfile is present
 if [ ! -f Procfile ]; then
