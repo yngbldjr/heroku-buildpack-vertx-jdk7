@@ -25,7 +25,7 @@ if [ ! -d "$BUILD_DIR/.jdk7" ]; then
   echo -n "-----> Installing OpenJDK7u2 build (to .jdk7)....."
   mkdir "$BUILD_DIR/.jdk7"
   cd "$BUILD_DIR/.jdk7"
-  curl --silent --max-time 180 --location $OPENJDK7_URL | tar xz
+  curl --max-time 180 --location $OPENJDK7_URL | tar xz
   echo " done"
 fi
 
@@ -42,6 +42,7 @@ if [ ! -d "$BUILD_DIR/.vertx" ]; then
   echo -n "-----> Installing Vert.x build (to .vertx)....."
   curl --max-time 320 --location $VERTX_URL | tar xz
   mv vert* .vertx
+  rm '.vertx/bin/vertx.bat'
   chmod -x .vertx/bin/vertx
   echo " done"
 fi
