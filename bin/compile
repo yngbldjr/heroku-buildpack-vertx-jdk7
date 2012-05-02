@@ -26,10 +26,11 @@ if [ ! -d "$BUILD_DIR/.jdk7" ]; then
   mkdir "$BUILD_DIR/.jdk7"
   cd "$BUILD_DIR/.jdk7"
   curl --max-time 180 --location $OPENJDK7_URL | tar xz
+  cd $BUILD_DIR
+  cp -r .jdk7 $CACHE_DIR/.jdk7
   echo " done"
 fi
 
-cd $BUILD_DIR
 if [ -d "$CACHE_DIR/.vertx" ]; then
   echo -n "copying vertx to app"
   cp -r "$CACHE_DIR/.vertx" $BUILD_DIR
@@ -43,15 +44,14 @@ if [ ! -d "$BUILD_DIR/.vertx" ]; then
   curl --max-time 320 --location $VERTX_URL | tar xz
   mv vert* .vertx
   rm '.vertx/bin/vertx.bat'
+  cd $BUILD_DIR
+  cp -r .vertx $CACHE_DIR/.vertx
   echo " done"
 fi
 
 cd $BUILD_DIR
 
 export JAVA_HOME="$BUILD_DIR/.jdk7"
-
-cp -r .jdk7 $CACHE_DIR/.jdk7
-cp -r .vertx $CACHE_DIR/.vertx
 
 # Warn if no Procfile is present
 if [ ! -f Procfile ]; then
