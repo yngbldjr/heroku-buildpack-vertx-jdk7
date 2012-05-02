@@ -43,7 +43,6 @@ if [ ! -d "$BUILD_DIR/.vertx" ]; then
   curl --max-time 320 --location $VERTX_URL | tar xz
   mv vert* .vertx
   rm '.vertx/bin/vertx.bat'
-  chmod -x .vertx
   echo " done"
 fi
 
