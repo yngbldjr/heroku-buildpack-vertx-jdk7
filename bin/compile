@@ -37,7 +37,7 @@ if [ -d "$CACHE_DIR/.vertx" ]; then
   echo "done"
 fi
 
-VERTX_URL="https://github.com/downloads/purplefox/vert.x/vert.x-1.0.beta11.tar.gz"
+VERTX_URL="https://github.com/downloads/purplefox/vert.x/vert.x-1.0.final.tar.gz"
 
 if [ ! -d "$BUILD_DIR/.vertx" ]; then
   echo -n "-----> Installing Vert.x build (to .vertx)....."
