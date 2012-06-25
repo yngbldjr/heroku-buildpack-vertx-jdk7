@@ -52,6 +52,7 @@ fi
 cd $BUILD_DIR
 
 export JAVA_HOME="$BUILD_DIR/.jdk7"
+export VERTX_HOME="$BUILD_DIR/.vertx"
 
 # Warn if no Procfile is present
 if [ ! -f Procfile ]; then
