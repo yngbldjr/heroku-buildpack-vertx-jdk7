@@ -54,6 +54,10 @@ cd $BUILD_DIR
 export JAVA_HOME="$BUILD_DIR/.jdk7"
 export VERTX_HOME="$BUILD_DIR/.vertx"
 
+if [ -f compile.bat ]; then
+    echo 'compile.bat file found, executing...'
+fi
+
 # Warn if no Procfile is present
 if [ ! -f Procfile ]; then
   echo "-----> No Procfile found. Will use the following default process: "
