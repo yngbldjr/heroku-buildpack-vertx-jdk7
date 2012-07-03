@@ -55,6 +55,9 @@ export JAVA_HOME="$BUILD_DIR/.jdk7"
 export VERTX_HOME="$BUILD_DIR/.vertx"
 export PATH=$PATH:$JAVA_HOME/bin:$VERTX_HOME/bin
 
+echo "Path is set to"
+echo $PATH
+
 if [ -f compile.sh ]; then
     echo 'compile.sh file found, executing...'
     chmod 700 compile.sh
